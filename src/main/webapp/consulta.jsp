@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center">Consulta de Veículos</h1>
+		<h1 class="text-center">Consulta de Clientes</h1>
 		<div>
 			<a href="index.html"> Home </a> <a href="cadastro.html"> Cadastro
 			</a> <a href="consulta.jsp"> Consulta </a>
