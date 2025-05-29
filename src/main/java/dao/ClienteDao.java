@@ -38,19 +38,24 @@ public class ClienteDao {
 	}
 	
 	public static void alterar(Cliente clienteAlterado) {
-		try {
-		Connection con = ConexaoDB.getConexao();
-		String sql = "update cliente set nome = ?, email = ?, telefone = ? WHERE id = ?";
-		PreparedStatement stm = con.prepareStatement(sql);
-		stm.setString(1, clienteAlterado.getNome());
-		stm.setString(2, clienteAlterado.getEmail());
-		stm.setString(3, clienteAlterado.getTelefone());
-		stm.setInt(4, clienteAlterado.getId());
-	
-	} catch (SQLException e) {
-		throw new RuntimeException(e.getMessage());
+	    try {
+	        Connection con = ConexaoDB.getConexao();
+	        String sql = "update tb_clientes set nome = ?, email = ?, telefone = ? where id = ?";
+	        PreparedStatement stm = con.prepareStatement(sql);
+	        stm.setString(1, clienteAlterado.getNome());
+	        stm.setString(2, clienteAlterado.getEmail());
+	        stm.setString(3, clienteAlterado.getTelefone());
+	        stm.setInt(4, clienteAlterado.getId());
+
+	        stm.executeUpdate();
+
+	        stm.close();
+	        con.close();
+	    } catch (SQLException e) {
+	        throw new RuntimeException(e.getMessage());
+	    }
 	}
-	}
+
 
 	public static Cliente insert(Cliente cliente) {
 		try {

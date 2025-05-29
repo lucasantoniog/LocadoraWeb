@@ -40,20 +40,19 @@
 		%>
 		</h1>
 		<div>
-			<a href="index.html"> Home </a> <a href="cadastro.html"> Cadastro
-			</a> <a href="consulta.jsp"> Consulta </a>
+			<a href="index.html"> Home </a> 
+			<a href="cadastro.html"> Cadastro </a>
+			<a href="consulta.jsp"> Consulta </a>
 		</div>
-		<form id="fcad" action="cadastro.jsp" method="POST">
+		<form id="fcad" action="editar.jsp" method="POST">
+		<input type="hidden" name="id" value="<%= cliente.getId() %>" />
+		
 			<label for="nome">Informe seu nome</label> 
-				<input type="text"
-				  	   id="nome"
-				       name="nome"
-				  	   placeholder="EX: maria"
-				  	   value=<%out.print(cliente.getNome());%> />
+				<input type="text" id="nome" name="nome" placeholder="EX: maria" value="<%out.print(cliente.getNome());%>" />
 			<label for="email">Informe seu email</label>
-				<input type="email" id="email" name="email" placeholder="EX: maria@gmail.com" value=<%out.print(cliente.getEmail());%> /> 
+				<input type="email" id="email" name="email" placeholder="EX: maria@gmail.com" value="<%out.print(cliente.getEmail());%>" /> 
 			<label for="telefone">Informe seu telefone</label>
-				<input type="tel" id="telefone" name="telefone" placeholder="EX: (99)999-9999" value=<%out.print(cliente.getTelefone());%> /> 
+				<input type="tel" id="telefone" name="telefone" placeholder="EX: (99)999-9999" value="<%out.print(cliente.getTelefone());%>" /> 
 				<input type="button" value="salvar" onclick="gravar()" />
 		</form>
 	</div>
