@@ -15,5 +15,5 @@
     veiculo.setPrecoDiaria(precoDiaria);
 
     VeiculoDao.insert(veiculo);
-    response.sendRedirect("consultaVeiculos.jsp");
+    response.sendRedirect("consultaVeiculo.jsp");
 %>
