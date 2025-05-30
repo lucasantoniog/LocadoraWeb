@@ -15,4 +15,8 @@ public class ClienteControler {
 		ClienteDao.insert(cliente);
 		return cliente;
 	}
+
+	public void excluir(int id) {
+		ClienteDao.excluir(id);		
+	}
 }

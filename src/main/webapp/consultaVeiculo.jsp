@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Lista de Veículos</h1>
+    <a href="index.html"> Home </a> 
     <a href="cadastroVeiculo.html">Cadastrar novo veículo</a>
     <table border="1">
         <tr>

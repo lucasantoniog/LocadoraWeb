@@ -26,8 +26,9 @@
 					<th>Nome</th>
 					<th>Email</th>
 					<th>Telefone</th>
-					<th>Editar</th>
+					<th>Ações</th>
 				</tr>
+				</thead>
 			<tbody>
 				<%
 				// ClienteDao clidao = new ClienteDao();
@@ -40,12 +41,12 @@
 					out.print("<td>" + c.getNome() + "</td>");
 					out.print("<td>" + c.getEmail() + "</td>");
 					out.print("<td>" + c.getTelefone() + "</td>");
-					out.print("<td><a href='./editar.jsp?id="+c.getId()+"'>editar</a></td>");
+					out.print("<td><a href='./editar.jsp?id="+c.getId()+"'>editar</a></td> " + "<td><a href='./excluir.jsp?id=" +c.getId()+"' onclick='return confirm(\"Deseja realmente excluir?\")'>excluir</a></td>");
 					out.print("</tr>");
 				}
 				%>
 			</tbody>
-			</thead>
+			
 		</table>
 	</div>
 </body>

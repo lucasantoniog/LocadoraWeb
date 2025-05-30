@@ -32,6 +32,7 @@ public class ClienteDao {
 			stm.close();
 			con.close();			
 		} catch (SQLException e) {
+			
 			throw new RuntimeException(e.getMessage());
 		}
 		return cliente;
@@ -90,4 +91,19 @@ public class ClienteDao {
 		}
 		return clientes;
 	}
+
+	public static void excluir(int id) {
+	    try {
+	        Connection con = ConexaoDB.getConexao();
+	        String sql = "DELETE FROM tb_clientes WHERE id = ?";
+	        PreparedStatement stm = con.prepareStatement(sql);
+	        stm.setInt(1, id);
+	        stm.executeUpdate();
+	        stm.close();
+	        con.close();
+	    } catch (SQLException e) {
+	        throw new RuntimeException(e.getMessage());
+	    }
+	}
+
 }
